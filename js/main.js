@@ -62,15 +62,7 @@
             volunteerForm.reset();
         });
         
-        // Selección de método de pago
-        const paymentMethods = document.querySelectorAll('.payment-method');
-        paymentMethods.forEach(method => {
-            method.addEventListener('click', function() {
-                paymentMethods.forEach(m => m.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-        
+                
         // Animaciones al aparecer en viewport
         function animateOnScroll() {
             const elements = document.querySelectorAll('.fade-up, .card, .about-card, .service-card');
@@ -164,4 +156,33 @@
     });
 });
 
-    
+// MODAL APORTES
+const openModalBtn = document.querySelector('[data-open-modal="supportModal"]');
+const modal = document.getElementById('supportModal');
+const closeEls = modal.querySelectorAll('[data-close-modal]');
+
+openModalBtn.addEventListener('click', () => {
+  modal.classList.add('is-open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  modal.querySelector('input, select, textarea').focus();
+});
+
+closeEls.forEach(el => {
+  el.addEventListener('click', closeModal);
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+    closeModal();
+  }
+});
+
+function closeModal() {
+  modal.classList.remove('is-open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  openModalBtn.focus();
+}
+
+
