@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto de educación y Deportes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo-1.css">
+    <script src="js/estilo-1.js" defer></script>
+    
+</head>
+<body>
+    <main>
+        <!-- Modal del proyecto -->
+        <div class="modal-overlay" id="projectModal" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+            <div class="modal-proyecto">
+
+                <div class="modal-header">
+                    <div class="category-pill">DEPORTES + EDUCACIÓN</div>
+                    <h2 class="modal-title" id="modalTitle">Escuelas Activas: Integrando Deporte y Educación</h2>
+                    <button class="close-btn" id="closeModalBtn" aria-label="Cerrar ventana">×</button>
+                </div>
+
+                <!-- AD SLOT: top-banner -->
+                <div class="ad-slot ad-slot-top" aria-hidden="true">
+                    <!-- Espacio para banner 728x90 o responsive -->
+                    <div>Espacio para publicidad (728x90)</div>
+                </div>
+                
+                <div class="modal-content">
+                    <div class="content-column">
+                        <p class="lead-text" id="modalDescription">
+                            Un programa integral que combina actividades deportivas regulares con refuerzo educativo para niños y jóvenes en comunidades vulnerables, promoviendo desarrollo físico, cognitivo y social.
+                        </p>
+                        
+                        <!-- Métricas del proyecto -->
+                        <div class="metrics-container">
+                            <div class="metric-badge">
+                                <div class="metric-number">12</div>
+                                <div class="metric-label">Escuelas</div>
+                            </div>
+                            <div class="metric-badge">
+                                <div class="metric-number">550</div>
+                                <div class="metric-label">Beneficiarios</div>
+                            </div>
+                            <div class="metric-badge">
+                                <div class="metric-number">76%</div>
+                                <div class="metric-label">Progreso</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Barra de progreso -->
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Fondos recaudados</span>
+                                <span>$00,000 / $00,000</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Texto editorial -->
+                        <div class="editorial-text">
+                            <h3>Impacto del proyecto</h3>
+                            <p>El programa "Escuelas Activas" transforma la educación tradicional incorporando metodologías innovadoras donde el deporte sirve como herramienta pedagógica para mejorar el rendimiento académico, la salud y la cohesión social.</p>
+                            
+                            <ul class="feature-list">
+                                <li>Entrenamiento deportivo regular 3 veces por semana</li>
+                                <li>Sesiones de refuerzo educativo con enfoque lúdico</li>
+                                <li>Talleres de nutrición y hábitos saludables</li>
+                                <li>Formación para docentes en metodologías activas</li>
+                                <li>Competiciones inter-escolares trimestrales</li>
+                            </ul>
+                            
+                            <h3>Nuestro enfoque</h3>
+                            <p>Creemos que el deporte es un lenguaje universal que trasciende barreras culturales y socioeconómicas. Nuestra metodología combina técnicas de entrenamiento deportivo con estrategias educativas probadas, creando un ambiente de aprendizaje estimulante y seguro.</p>
+                        </div>
+                        
+                        <!-- CTAs -->
+                        <div class="cta-container">
+                            <button class="cta-primary">Donar al proyecto</button>
+                            <button class="cta-secondary">Inscribirme como voluntario</button>
+                        </div>
+                        
+                        <!-- Microcopy legal -->
+                        <div class="legal-microcopy">
+                            Al hacer clic en "Donar", aceptas nuestra <a href="/transparencia">Política de transparencia</a> y autorizas el procesamiento de tu donación según nuestros términos. Las donaciones son deducibles de impuestos.
+                        </div>
+                        
+                        <!-- Badge de idioma -->
+                        <div class="language-badge">
+                            <span>Disponible en: Español • English • Français</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-column">
+                        <div class="gallery-bg"></div>
+                         <div class="gallery-carousel" aria-label="Galería del proyecto">
+                            <div class="carousel-track">
+                                <img src="/proyectos/educacion-deporte/images/leones de juda-niñas-pendon.webp"
+                                    alt="Niños participando en actividades deportivas"
+                                    loading="lazy">
+
+                                <img src="/proyectos/educacion-deporte/images/leones de juda-adolescentes.webp"
+                                    alt="Estudiantes en actividades educativas"
+                                    loading="lazy">
+
+                                <img src="/proyectos/educacion-deporte/images/leones de juda-niños.webp"
+                                    alt="Niños celebrando después de un partido"
+                                    loading="lazy">
+                            </div>
+
+                            <button class="carousel-btn prev" aria-label="Imagen anterior">‹</button>
+                            <button class="carousel-btn next" aria-label="Imagen siguiente">›</button>
+                        </div>
+                        <div class="gallery-spacer"></div>
+                        <div class="gallery-footer-image">
+                                <img 
+                                    src="/proyectos/educacion-deporte/images/niños.jpg"
+                                    alt="Niños aprendiendo y jugando"
+                                    loading="lazy"
+                                >
+                            </div>
+
+                    </div>
+                    
+                </div>
+                
+                <!-- AD SLOT: mobile-320x50 -->
+                <div class="ad-slot ad-slot-mobile" aria-hidden="true">
+                    <!-- Espacio para anuncio móvil 320x50 -->
+                    <div>Publicidad móvil (320x50)</div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -185,4 +185,44 @@ function closeModal() {
   openModalBtn.focus();
 }
 
+// ===============================
+// MODAL PROYECTOS — MAIN PRINCIPAL
+// ===============================
+
+const projectModal = document.getElementById('globalProjectModal');
+const projectFrame = document.getElementById('globalModalFrame');
+const closeBtn = document.querySelector('.global-close');
+
+// ABRIR
+document.addEventListener('click', e => {
+  const trigger = e.target.closest('[data-modal-url]');
+  if (!trigger) return;
+
+  e.preventDefault();
+
+  projectFrame.src = trigger.dataset.modalUrl + '#open';
+  projectModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+});
+
+// CERRAR (BOTÓN / ESC / MENSAJE)
+function closeProject() {
+  projectModal.classList.remove('active');
+  projectFrame.src = '';
+  document.body.style.overflow = '';
+}
+
+closeBtn.addEventListener('click', closeProject);
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && projectModal.classList.contains('active')) {
+    closeProject();
+  }
+});
+
+window.addEventListener('message', e => {
+  if (e.data === 'CLOSE_PROJECT') {
+    closeProject();
+  }
+});
 

@@ -220,7 +220,12 @@
                             <span class="pill">Educación y deporte</span>
                             <h3 class="project-title">Modelo educativo</h3>
                             <p class="project-summary">Iniciativas educativas, culturales y deportivas que fortalecen el desarrollo, educación emocional y bienestar de niños vulnerables.</p>
-                            <a href="#proyecto1" class="btn btn-secondary">Ver proyecto</a>
+                            <a href="/proyectos/educacion-deporte/"
+                                class="btn btn-secondary"
+                                data-modal-url="/proyectos/educacion-deporte/"
+                                role="button">
+                                Ver proyecto
+                            </a>
                         </div>
                     </div>
                     
@@ -624,5 +629,16 @@
     
     <!-- Espacio reservado para scripts de anuncios (se cargarían después de aceptar cookies) -->
     <div id="ad-scripts-placeholder"></div>
+
+    <!-- Modal global para proyectos -->
+    <div class="global-modal-overlay" id="globalProjectModal">
+        <div class="global-modal-container">
+            <button class="global-close">×</button>
+            <iframe id="globalModalFrame"
+                    src=""
+                    loading="lazy"
+                    frameborder="0"></iframe>
+        </div>
+    </div>
 </body>
 </html>
