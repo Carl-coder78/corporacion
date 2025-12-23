@@ -117,14 +117,22 @@
         });
     
         //HERO CARRUSEL
-        const slides = document.querySelectorAll('.hero-image-frame .slide');
-        let i = 0;
+        
+(() => {
+  const hero = document.querySelector('[data-hero-editorial]');
+  if (!hero) return;
 
-        setInterval(() => {
-        slides[i].classList.remove('active');
-        i = (i + 1) % slides.length;
-        slides[i].classList.add('active');
-    }, 3500);
+  const slides = hero.querySelectorAll('.hero-image-slide');
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+  }, 6000);
+})();
+
+
 
     // Boton leer mas ...
     document.addEventListener("DOMContentLoaded", () => {
@@ -225,4 +233,143 @@ window.addEventListener('message', e => {
     closeProject();
   }
 });
+
+/* ===============================
+   HERO — CARRUSEL + EDITORIAL
+   No se pisan
+================================ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    /* ===============================
+       IMÁGENES HERO (MISMA LÓGICA ORIGINAL)
+    =============================== */
+    const slides = document.querySelectorAll('.hero-image-frame .slide');
+    const indicators = document.querySelectorAll('.image-indicators .indicator');
+
+    let currentImage = 0;
+    let imageInterval;
+
+    function changeImage(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(ind => ind.classList.remove('active'));
+
+        slides[index].classList.add('active');
+        if (indicators[index]) indicators[index].classList.add('active');
+
+        currentImage = index;
+    }
+
+    function startImageRotation() {
+        clearInterval(imageInterval);
+        imageInterval = setInterval(() => {
+            const next = (currentImage + 1) % slides.length;
+            changeImage(next);
+        }, 6000);
+    }
+
+    // estado inicial
+    changeImage(0);
+    startImageRotation();
+
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            changeImage(index);
+            startImageRotation();
+        });
+    });
+
+    /* ===============================
+       STACK EDITORIAL 
+    =================== */
+    const headlines = document.querySelectorAll('.headline-item');
+    let headlineIndex = 1;
+    const totalHeadlines = headlines.length;
+
+    function animateHeadlines() {
+
+        if (headlineIndex >= totalHeadlines) {
+            for (let i = 1; i < totalHeadlines; i++) {
+                headlines[i].classList.remove('active');
+            }
+
+            headlineIndex = 1;
+            headlines[0].classList.add('active');
+
+            setTimeout(() => {
+                headlines[0].classList.remove('active');
+                setTimeout(() => {
+                    headlines[headlineIndex].classList.add('active');
+                    headlineIndex++;
+                    setTimeout(animateHeadlines, 3000);
+                }, 500);
+            }, 3000);
+
+            return;
+        }
+
+        if (headlineIndex > 0) {
+            headlines[headlineIndex - 1].classList.remove('active');
+        }
+
+        headlines[headlineIndex].classList.add('active');
+        headlineIndex++;
+
+        setTimeout(animateHeadlines, 3000);
+    }
+
+    setTimeout(animateHeadlines, 4000);
+
+});
+
+
+  /* ===============================
+       Data target SCROLL TO
+    =============================== */
+(function () {
+
+    const modal = document.getElementById('globalProjectModal');
+    const body = document.body;
+
+    function closeModalFast() {
+        if (!modal) return;
+
+        modal.style.opacity = '0';
+        modal.style.pointerEvents = 'none';
+
+        // liberar scroll inmediatamente
+        body.style.overflow = '';
+
+        // quitar del flujo un poco después
+        setTimeout(() => {
+            modal.classList.remove('active');
+            modal.style.opacity = '';
+            modal.style.pointerEvents = '';
+        }, 120);
+    }
+
+    window.addEventListener('message', function (event) {
+
+        if (!event.data || event.data.type !== 'SCROLL_TO') return;
+
+        const targetEl = document.querySelector(event.data.target);
+        if (!targetEl) return;
+
+        // 1️⃣ cerrar modal de forma inmediata visual
+        closeModalFast();
+
+        // 2️⃣ scroll casi inmediato
+        requestAnimationFrame(() => {
+            targetEl.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+
+    });
+
+})();
+
+
+
 

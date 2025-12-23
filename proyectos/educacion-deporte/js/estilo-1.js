@@ -85,3 +85,22 @@
         update();
     });
 })();
+
+
+// ===============================
+// Data target apóyanos e involúcrate
+// ===============================
+
+document.querySelectorAll('.cta-container button').forEach(button => {
+    button.addEventListener('click', () => {
+        const target = button.dataset.target;
+
+        window.parent.postMessage(
+            {
+                type: 'SCROLL_TO',
+                target
+            },
+            '*'
+        );
+    });
+});

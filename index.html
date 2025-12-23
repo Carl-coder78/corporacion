@@ -90,9 +90,8 @@
                 </div>
                     <div class="hero-image">
                     <div class="image-card">
-                        <div class="hero-image-frame">
-                            <img class="slide active" src="assets/images/Familia-Leones-de-juda.webp" alt="">
-                            <img class="slide" src="assets/images/Juveniles-Club-Leones-de-juda.webp" alt="">
+                        <div class="hero-image-frame" data-hero-editorial>
+                             <img class="slide active" src="assets/images/Juveniles-Club-Leones-de-juda.webp" alt="">
                             <img class="slide" src="assets/images/Madres-club-Leones-de-juda.webp" alt="">
 
                             <div class="decor-overlay"
@@ -101,17 +100,53 @@
                                 opacity:.15;">
                             </div>
                             <!-- OVERLAY PEQUEÑO (el nuevo, reducido, decorativo) -->
-        <div class="decor-overlay-small"
-            style="
-            position:absolute;
-            top:20px; 
-            left:20px;
-            width:calc(100% - 40px);
-            height:calc(100% - 40px);
-            border:3px solid rgba(255,255,255,0.25);
-            border-radius:8px;
-            pointer-events:none;">
-        </div>
+                            <div class="decor-overlay-small"
+                                style="
+                                position:absolute;
+                                top:20px; 
+                                left:20px;
+                                width:calc(100% - 40px);
+                                height:calc(100% - 40px);
+                                border:3px solid rgba(255,255,255,0.25);
+                                border-radius:8px;
+                                pointer-events:none;">
+                            </div>
+                            <!-- Indicadores editoriales -->
+                            <div class="image-indicators">
+                                <div class="indicator active"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                            </div>
+
+                            <!-- Stack editorial -->
+                            <div class="headlines-stack">
+                                <div class="stack-title">
+                                    <i class="fas fa-bullhorn"></i>
+                                    Impacto Social
+                                </div>
+
+                                <div class="headline-item active">
+                                    <div class="headline-text">Fortalecimiento del bienestar social</div>
+                                    <div class="headline-time">
+                                        <i class="far fa-clock"></i> Actualizado hoy
+                                    </div>
+                                </div>
+
+                                <div class="headline-item">
+                                    <div class="headline-text">Programas que impactan en 5 sectores vulnerables</div>
+                                    <div class="headline-time">
+                                        <i class="far fa-clock"></i> Esta semana
+                                    </div>
+                                </div>
+
+                                <div class="headline-item">
+                                    <div class="headline-text">Voluntariado familiar con enfoque en sostenibilidad social</div>
+                                    <div class="headline-time">
+                                        <i class="far fa-clock"></i> Junio 2025
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -325,6 +360,7 @@
                             <li>Talleres de resiliencia</li>
                             <li>Acompa&ntilde;amiento en crisis</li>
                         </ul>
+                        <div class="service-spacer"></div>
                         <a href="#psicosocial" class="btn btn-secondary" style="margin-top:16px;">Saber m&aacute;s</a>
                     </div>
                     
@@ -344,6 +380,7 @@
                             <li>Infraestructura comunitaria</li>
                             <li>Proyectos productivos</li>
                         </ul>
+                        <div class="service-spacer"></div>
                         <a href="#comunidad" class="btn btn-secondary" style="margin-top:16px;">Saber m&aacute;s</a>
                     </div>
                 </div>
@@ -361,7 +398,10 @@
                     <div class="story-image">
                         <!-- Imagen de placeholder -->
                         <div style="width:100%;height:400px;background:linear-gradient(45deg, #0B5A6F, #127994);display:flex;align-items:center;justify-content:center;color:white;font-size:1.2rem;">
-                            Ana y su hijo Miguel
+                            
+                            <div class="story-media">
+                                <img src="/assets/images/mon-son.jpg" alt="Ana y Miguel">
+                            </div>
                         </div>
                     </div>
                     <div class="story-content">
